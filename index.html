@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Para Minha Evelyn ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow-x: hidden;
+}
+
+/* TELA INICIAL */
+#intro {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    transition: opacity 1.5s ease;
+}
+
+#intro h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#startBtn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#startBtn:hover {
+    background: #ff1e4d;
+    transform: scale(1.1);
+}
+
+/* CONTEÚDO */
+.container {
+    opacity: 0;
+    transition: opacity 2s ease;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+
+.foto img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    margin: 20px 0;
+}
+
+iframe {
+    margin: 20px 0;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.heart {
+    font-size: 40px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TELA INICIAL -->
+<div id="intro">
+    <h1>Para Minha Evelyn 💖</h1>
+    <button id="startBtn">Clique para ouvir nossa música 🎵</button>
+</div>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div class="container" id="mainContent">
+
+    <div class="foto">
+        <img src="foto.jpg" alt="Nossa foto juntos">
+    </div>
+
+    <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/0HdWS8OLFeAQTntk2jBoMj"
+        width="100%"
+        height="152"
+        frameBorder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+    </iframe>
+
+    <p>
+    Buscando meu propósito me deparei com aquela garota em um momento bom...
+    </p>
+
+    <p><strong>Enfim... eu te amo, minha garota.</strong></p>
+
+    <div class="heart">❤️</div>
+
+</div>
+
+<script>
+document.getElementById("startBtn").addEventListener("click", function() {
+    document.getElementById("intro").style.opacity = "0";
+    setTimeout(function(){
+        document.getElementById("intro").style.display = "none";
+    },1500);
+
+    document.getElementById("mainContent").style.opacity = "1";
+});
+</script>
+
+</body>
+</html>
